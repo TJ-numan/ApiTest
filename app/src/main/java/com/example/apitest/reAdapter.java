@@ -44,7 +44,7 @@ public class reAdapter extends RecyclerView.Adapter<reAdapter.MyViewHolder> impl
 
         FirstAidModel getData = titleArray.get(position);
 
-         holder.id.setText(getData.getIdmodel());
+         holder.id.setText(  String.valueOf(getData.getIdmodel()));
          holder.hospitalcode.setText(getData.getHospitalCodemodel());
          holder.hospitalname.setText(getData.getHospitalNamemodel());
 
@@ -97,7 +97,7 @@ public class reAdapter extends RecyclerView.Adapter<reAdapter.MyViewHolder> impl
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            hospitalcode= itemView.findViewById(R.id.id);
+            id= itemView.findViewById(R.id.id);
             hospitalname= itemView.findViewById(R.id.HospitalName);
             hospitalcode= itemView.findViewById(R.id.HospitalCode);
 

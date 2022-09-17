@@ -75,10 +75,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-       // recyclerView = findViewById(R.id.itemsrecycler);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView = findViewById(R.id.itemsrecycler);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new reAdapter(this,arrayList);
-//        recyclerView.setAdapter(adapter);
+      recyclerView.setAdapter(adapter);
 
     }
 }
