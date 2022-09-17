@@ -53,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
 
                List<Post> posts =response.body();
                 for(Post post: posts){
-                    arrayList.add(new FirstAidModel(post.getId(),post.getHospitalCode(),post.getHospitalName()));
 
                     String content = "";
                     content+="ID="+post.getId()+"\n";
@@ -63,6 +62,9 @@ public class MainActivity extends AppCompatActivity {
                     content+="DistName="+post.getDistName()+"\n\n\n";
 
                     textViewResult.append(content);
+
+                    arrayList.add(new FirstAidModel(post.getId(),post.getHospitalCode(),post.getHospitalName()));
+
 
                 }
             }
