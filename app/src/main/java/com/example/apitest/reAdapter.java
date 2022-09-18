@@ -1,6 +1,7 @@
 package com.example.apitest;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,12 +19,12 @@ public class reAdapter extends RecyclerView.Adapter<reAdapter.MyViewHolder> impl
 
  Context context;
  ArrayList<FirstAidModel> titleArray;
- ArrayList<FirstAidModel> getTitleArrayfull;
+ ArrayList<FirstAidModel> getTitleArrayfull = new ArrayList<>();
 
     public reAdapter(Context context, ArrayList<FirstAidModel> titleArray) {
         this.context = context;
         this.titleArray = titleArray;
-        getTitleArrayfull = new ArrayList<>(titleArray);
+        getTitleArrayfull.addAll(titleArray);
     }
 
     @Override
@@ -47,6 +48,9 @@ public class reAdapter extends RecyclerView.Adapter<reAdapter.MyViewHolder> impl
          holder.id.setText(  String.valueOf(getData.getIdmodel()));
          holder.hospitalcode.setText(getData.getHospitalCodemodel());
          holder.hospitalname.setText(getData.getHospitalNamemodel());
+         holder.address.setText(getData.getHospitalAddressmodel());
+
+        Log.d("searchDBholder","array:"+getTitleArrayfull.size());
 
     }
 
@@ -59,17 +63,26 @@ public class reAdapter extends RecyclerView.Adapter<reAdapter.MyViewHolder> impl
         @Override
         protected FilterResults performFiltering(CharSequence charSequence) {
             List<FirstAidModel> filterList = new ArrayList<>();
+            Log.d("CharSequence","CharSequence:"+charSequence);
+            Log.d("searchDBseq","array:"+getTitleArrayfull.size());
             if (charSequence == null || charSequence.length() == 0)
             {
+                Log.d("searchDB","something");
                 filterList.addAll(getTitleArrayfull);
             }
             else {
+                Log.d("searchDB","something else");
+                Log.d("searchDB","array:"+getTitleArrayfull.size());
                 String filterPattern = charSequence.toString().toLowerCase().trim();
+
 
                 for (FirstAidModel item:getTitleArrayfull)
                 {
-                    if (item.getHospitalNamemodel().toLowerCase().contains(filterPattern))
+                    Log.d("searchDB","Filter:"+filterPattern);
+                    Log.d("searchDB","hospitalCode:"+item.getHospitalCodemodel());
+                    if (item.getHospitalCodemodel().contains(filterPattern) || item.getHospitalNamemodel().contains(filterPattern) )
                     {
+
                         filterList.add(item);
                     }
                 }
@@ -94,12 +107,14 @@ public class reAdapter extends RecyclerView.Adapter<reAdapter.MyViewHolder> impl
         TextView id;
         TextView hospitalcode;
         TextView hospitalname;
+        TextView address;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             id= itemView.findViewById(R.id.id);
             hospitalname= itemView.findViewById(R.id.HospitalName);
             hospitalcode= itemView.findViewById(R.id.HospitalCode);
+            address = itemView.findViewById(R.id.address);
 
 
         }

@@ -5,11 +5,15 @@ public class FirstAidModel {
     int  Idmodel ;
     String HospitalCodemodel;
     String HospitalNamemodel;
+    String Districmodel;
+    String HospitalAddressmodel;
 
-    public FirstAidModel(int idmodel, String hospitalCodemodel, String hospitalNamemodel) {
+
+    public FirstAidModel(int idmodel, String hospitalCodemodel, String hospitalNamemodel,String hospitalAddressmodel) {
         Idmodel = idmodel;
         HospitalCodemodel = hospitalCodemodel;
         HospitalNamemodel = hospitalNamemodel;
+        HospitalAddressmodel = hospitalAddressmodel;
     }
 
     public int getIdmodel() {
@@ -23,21 +27,8 @@ public class FirstAidModel {
     public String getHospitalNamemodel() {
         return HospitalNamemodel;
     }
-    //
-//
-//    public int getIdmodel() {
-//        return Idmodel;
-//    }
-//
-//    public String getHospitalCode() {
-//        return HospitalCodemodel;
-//    }
-//
-//    public String getHospitalName() {
-//        return HospitalNamemodel;
-//    }
-//
 
-
-
+    public String getHospitalAddressmodel() {
+        return HospitalAddressmodel;
+    }
 }

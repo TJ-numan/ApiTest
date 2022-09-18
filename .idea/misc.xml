@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/ApiTest/app/src/main/res/drawable/search_24.xml" value="0.13703703703703704" />
         <entry key="..\:/ApiTest/app/src/main/res/layout/activity_main.xml" value="0.16979166666666667" />
         <entry key="..\:/ApiTest/app/src/main/res/layout/task_layout.xml" value="0.18385416666666668" />
+        <entry key="..\:/ApiTest/app/src/main/res/menu/search_menu.xml" value="0.19583333333333333" />
       </map>
     </option>
   </component>

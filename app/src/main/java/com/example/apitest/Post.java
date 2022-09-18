@@ -5,8 +5,7 @@ public class Post {
     int  Id ;
     String HospitalCode;
     String HospitalName;
-    String Dist;
-    String DistName;
+    String HospitalAddress;
 
     public int getId() {
         return Id;
@@ -20,11 +19,7 @@ public class Post {
         return HospitalName;
     }
 
-    public String getDist() {
-        return Dist;
-    }
-
-    public String getDistName() {
-        return DistName;
+    public String getHospitalAddress() {
+        return HospitalAddress;
     }
 }
